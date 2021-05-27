@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+.blockMain {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #F8F8F8;
+    padding: 1em;
+    
+}
