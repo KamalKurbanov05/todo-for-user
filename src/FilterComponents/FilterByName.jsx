@@ -2,13 +2,15 @@ import React, {useState} from "react";
 import "./css/FilterByName.css"
 
 export default function FilterByName (props) {
+    const [classNameForRadioBtnByName, setClassNameForRadioBtnByName] = useState("");
+    const [classNameForRadioBtnByText, setClassNameForRadioBtnByText] = useState("");
 
     let lisTodo = props.holderTodo.map(todo => todo);
 
     let filterList;
     let filterText;
-    let handlerInputText = (el) => {
-        filterText = el.target.value;
+    let handlerInputText = (ev) => {
+        filterText = ev.target.value;
         console.log("we come here");
         
         if (filterText.length === 0) {
@@ -17,35 +19,62 @@ export default function FilterByName (props) {
         }
 
         props.changeWordInput(filterText);
+        
         if (filterText.length >= 3) {
 
             if (props.typeFilter === "byName"){
                 props.changeTaskFilterHolder([]);
                 filterList =  lisTodo.filter(todo => todo.heading.includes(filterText));
                 props.changeTaskFilterHolder(filterList);
+                
+                if (filterList.length === 0) {
+                    setClassNameForRadioBtnByName("notFound");
+                    setClassNameForRadioBtnByText("filterSearch")
+                } else {
+                    setClassNameForRadioBtnByName( "filterSearch");
+                }
 
             } else if (props.typeFilter === "byText") {
                 props.changeTaskFilterHolder([]);
                 filterList = lisTodo.filter(todo => todo.task.includes(filterText));
                 console.log("we here now");
                 props.changeTaskFilterHolder(filterList);
+                
             }
         }
     }
     
-    let classChangebyText;
-    let handlerFilter = (el) => {
-        console.log('handlerFilter', el)
-        props.changeTypeFilter(el.target.value);
+    
+    let handlerFilter = (ev) => {
+        props.changeTypeFilter(ev.target.value);
         props.changeTaskFilterHolder([]);
-        if (el.target.value === "byName") {
+        if (ev.target.value === "byName") {
             let filterList = lisTodo.filter(todo => todo.heading.includes(props.wordInput));
             props.changeTaskFilterHolder(filterList);
+            
+            if (filterList.length === 0) {
+                setClassNameForRadioBtnByName("notFound");
+                setClassNameForRadioBtnByText("filterSearch");
 
-        } else if (el.target.value === "byText") {
+            } else {
+                setClassNameForRadioBtnByName( "filterSearch");
+                setClassNameForRadioBtnByText("filterSearch");
+            }
+        
+        } else if (ev.target.value === "byText") {
             let filterList = lisTodo.filter(todo => todo.task.includes(props.wordInput));
             props.changeTaskFilterHolder(filterList);
-        } 
+            
+            if (filterList.length === 0) {
+                setClassNameForRadioBtnByText("notFound");
+                setClassNameForRadioBtnByName( "filterSearch");
+            } else {
+                setClassNameForRadioBtnByText("filterSearch");
+                setClassNameForRadioBtnByName("filterSearch");
+            }
+        }
+        
+        
     }
 
     return (
@@ -54,7 +83,7 @@ export default function FilterByName (props) {
                 <input type="text" name="formForFilter" placeholder="Текст или слово" value={props.wordInput} onChange={handlerInputText}/>
                 Фильтровать 
             </label>
-            <label className={classChangebyText}>
+            <label className={classNameForRadioBtnByName}>
                 По названию задачи
                 <input 
                 
@@ -66,7 +95,7 @@ export default function FilterByName (props) {
                 checked={props.typeFilter !=="byName"? false: true}
                 />
             </label>
-            <label className={classChangebyText}>
+            <label className={classNameForRadioBtnByText}>
                 по тексту задачи
                 <input 
                 disabled={props.wordInput.length >= 3? false: true} 
@@ -74,6 +103,7 @@ export default function FilterByName (props) {
                 value="byText" 
                 name="filterTask" 
                 onChange={handlerFilter}
+                checked={props.typeFilter !== "byText"? false: true}
                 />
             </label>
         </div>

@@ -20,7 +20,7 @@ export default function Filter(props) {
         <div>
             <DropingFilter changeTypeFilter={changeTypeFilter} changeWordInput={changeWordInput} holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder} />
             <FilterByDone holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder}/>
-            <FilterByName typeFilter={typeFilter} wordInput={wordInput} changeWordInput={changeWordInput} changeWordInput={changeWordInput} changeTypeFilter={changeTypeFilter} holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder}/>
+            <FilterByName typeFilter={typeFilter} wordInput={wordInput} changeWordInput={changeWordInput}  changeTypeFilter={changeTypeFilter} holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder}/>
         </div>
     )
 }

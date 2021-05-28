@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DleteHighlight (props) {
+export default function DeleteHighlight (props) {
   console.log('we here bro', props.holderTodo)
 
     let handlerSetAll = () => {
@@ -26,12 +26,12 @@ export default function DleteHighlight (props) {
           }
           )
         }
-        props.holderHiglightAllAndDelete(listDoneAll)
+        props.holderHighlightAllAndDelete(listDoneAll)
       }
 
      let handlerDeleteAll = () => {
     
-        props.holderHiglightAllAndDelete([])
+        props.holderHighlightAllAndDelete([])
       }
     
     return(

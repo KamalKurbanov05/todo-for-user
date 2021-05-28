@@ -18,7 +18,7 @@ import "./MainInputsApp.css"
   }
 
   let createTask = () => {
-    const date = new Date;
+    const date = new Date();
     const objTask = {
       id: Date.now(),
       heading: heading,
