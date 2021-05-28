@@ -17,7 +17,6 @@ export default function Card(props) {
 
     return(
         <li
-            key={props.index}
         >
             <div className="inputBlock">
                 <div className="labelBlock">

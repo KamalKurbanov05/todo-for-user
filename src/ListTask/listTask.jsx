@@ -59,7 +59,7 @@ export default function ListTask(props) {
  
     return(
           <ul>
-            {listTodo.map((todo, index) => <Card getIdForDoneUpdate={getIdForDoneUpdate} getIdForDeleteEl={getIdForDeleteEl}  todo={todo} index={index}/>)} 
+            {listTodo.map((todo, index) => <Card getIdForDoneUpdate={getIdForDoneUpdate} getIdForDeleteEl={getIdForDeleteEl}  todo={todo} key={index}/>)} 
           </ul>
         )
 }

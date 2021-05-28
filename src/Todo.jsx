@@ -3,9 +3,12 @@ import MainInputs from "./InputsApp/MainInputsApp";
 import Statistics from "./ContentApp/StatisticContent";
 import DeleteAdnHighlightAll from "./BtnDeleteHighlight/DeleteAdnHighlightAll";
 import ListTask from "./ListTask/listTask";
-import FilterByName from "./FilterList/FilterByName";
-import FilterByDone from "./FilterList/FIlterByDoneTask";
+import Filter from "./FilterComponents/Filter";
+// import FilterByName from "./FilterComponents/FilterByName";
+// import FilterByDone from "./FilterComponents/FIlterByDoneTask";
+// import DropingFilter from "./FilterComponents/DropingFilter";
 import "./Todo.css"
+
 
 
 export default function Todo() {
@@ -36,8 +39,7 @@ export default function Todo() {
               <DeleteAdnHighlightAll holderTodo={holderTodo} holderHiglightAllAndDelete={holderHiglightAllAndDelete} />
               <Statistics holderTodo={holderTodo}/>
               <ListTask holderTodo={holderTodo} holderFilter={holderFilter} changeHolderTodoForUser={changeHolderTodoForUser} changeTaskFilterHolder={changeTaskFilterHolder}/>
-              <FilterByName holderTodo={holderTodo} changeTaskFilterHolder={changeTaskFilterHolder}/>
-              <FilterByDone changeTaskFilterHolder={changeTaskFilterHolder} holderTodo={holderTodo} holderFilter={holderFilter}/>
+              <Filter holderFilter={holderFilter} holderTodo={holderTodo} changeTaskFilterHolder={changeTaskFilterHolder}/>
             </div>
            )
 }

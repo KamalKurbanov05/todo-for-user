@@ -1,0 +1,19 @@
+.filterSearch {
+    position: relative;
+    transition: color 2s ease-in-out;
+}
+
+.notFound {
+    position: relative;
+}
+
+.notFound ::after {
+    position: absolute;
+    content: "по такому запросу ничего не найденно";
+    color: red;
+    font-size: 5px;
+}
+
+.labelInput {
+    color: green;
+}
