@@ -4,16 +4,29 @@
 }
 
 .notFound {
-    position: relative;
-}
-
-.notFound ::after {
-    position: absolute;
-    content: "по такому запросу ничего не найденно";
+    display: block;
+    width: 200px;
+    min-height: 40px;
+    padding: 1em;
+    font-size: 10px;
     color: red;
-    font-size: 5px;
+    background-color: #ffd6dd;
+    border-radius: 1em;
+    transition: all 1.3s ease-in-out;
 }
 
-.labelInput {
-    color: green;
+.labelFilter {
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.inputFilter {
+    margin-left: 10px;
+}
+
+.input {
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ffae00;
 }

@@ -38,28 +38,32 @@ import "./MainInputsApp.css"
   }
     return(
         <div className="block">
-            <div className="inputs">
-              <input
+            <input
               className="inputHeading" 
               onChange={dataHeading}
               placeholder="Описание"
               type="text"
               value={heading}
               />
+            <div className="inputsBlockTask">
               <textarea
+                disabled={heading.length > 3 ? false: true}
+                style={heading.length > 3 ? {cursor: 'pointer'}: {cursor: 'no-drop'}}
                 className ="inputTask"
                 onChange={dataTask}
-                placeholder="введите задачу"
+                placeholder="Введите задачу"
                 type="text"
                 value={task}
               />
-              </div>
+              
             <button 
+              disabled={heading.length > 3 ? false: true}
+              style={heading.length > 3 ? {cursor: 'pointer' }: {cursor: 'no-drop', backgroundColor: '#FFCA86'}}
               className="inputBtn"
-              disabled={heading.length === 0 && task.length === 0}  
               onClick={createTask}>
                Создать 
                </button>
+            </div>
         </div>
         )
 }

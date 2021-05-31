@@ -12,7 +12,6 @@ export default function DropingFilter(props){
     let handlerButtonFilter = () => {
         
         props.changeTaskFilterHolder([]);
-        console.log("see on props", props);
         props.changeWordInput("");
         props.changeTypeFilter("byName");
     }
@@ -21,9 +20,10 @@ export default function DropingFilter(props){
         <div>
             <button
             disabled={props.holderFilter.length !== 0 ? false: true}
+            style={props.holderFilter.length === 0? {cursor: "no-drop"}: {cursor: "pointer"}}
             className={styleForBtn}
             onClick={handlerButtonFilter}>
-                 сбросить фильтр 
+                 Сбросить фильтр 
             </button>
         </div>
     )

@@ -1,0 +1,49 @@
+.inputBlock {
+    width: 600px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.topContent {
+    display: flex;
+}
+
+.itemContenBlock {
+    margin-left: 20px;
+}
+
+.bottomContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ffae00;
+    margin-top: 36px;
+}
+
+.Btn:hover {
+    background-color: #ff7f50;
+}
+
+.labelFilter {
+    font-size: 10px;
+}
+
+.labelFilter:hover {
+    cursor: pointer;
+}
+
+.itemCheckbox {
+    cursor: pointer;
+}

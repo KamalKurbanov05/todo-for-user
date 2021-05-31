@@ -1,26 +1,31 @@
 import React from "react";
+import "./CardTask.css"
 
 export default function Card(props) {
-        
+
     let todo = Object.assign({} ,props.todo);
     
     let handlerDelete = () => {
-        let response = window.confirm(`Вы действительно хотите удалить ${todo.heading !== '' ? todo.heading : todo.task} ?`)
+        
+      let response = window.confirm(`Вы действительно хотите удалить ${todo.heading !== '' ? todo.heading : todo.task} ?`)
+
         if (response) {
-        props.getIdForDeleteEl(todo.id)
-        } 
+          props.getIdForDeleteEl(todo.id)
+        }
     }
 
-    let handlerChangeDone = (el) => {
+    let handlerChangeDone = () => {
         props.getIdForDoneUpdate(todo.id)
     }
 
     return(
         <li
+          className="inputBlock"
+          style={todo.done? {backgroundColor: "#98FB98"}: {backgroundColor: "white"}}
         >
-            <div className="inputBlock">
+            <div className="topContent" >
                 <div className="labelBlock">
-                  <label className="checkboxLabel" htmlFor="inputTextCheckbox">Выполнено</label>
+                  <label className="labelFilter" htmlFor="inputTextCheckbox">Выполнено</label>
                   <input
                     id="inputTextCheckbox"
                     type="checkbox"
@@ -34,14 +39,14 @@ export default function Card(props) {
                     <p className={"itemCardText"}> <span style={{fontWeight: 'bold'}}>Задача:</span> {todo.task}</p>
                 </div>
             </div>
-                  
-              <div className={"ItemBottomContent"}>
+
+              <div className="bottomContent">
                         <div>
                           <p> Время: {todo.time}</p>
                           <p style={{margin: 0}}>Дата : {todo.date}</p>
                         </div>
                         <button
-                          className={"itemBtn"}
+                          className="Btn"
                           onClick={
                               handlerDelete
                           }
@@ -53,4 +58,4 @@ export default function Card(props) {
                     </li>
                   )
                 }
-    
+

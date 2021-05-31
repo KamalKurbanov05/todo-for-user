@@ -5,7 +5,7 @@ import Card from "./CardTask";
 export default function ListTask(props) { 
   const [idForDelete, setIdForDelete] = useState(0);
   const [IdForStateDone, setIdForStateDone] = useState(0);
-  console.log('aaaaaarrrr' , props);
+
   let listTodo = props.holderFilter.length !== 0? props.holderFilter.map(val => val) : props.holderTodo.map(val => val);
 
   
@@ -14,7 +14,15 @@ export default function ListTask(props) {
     let filterNewListTodoAfterDel = props.holderFilter.filter(todo => todo.id !== idForDelete);
     props.changeTaskFilterHolder(filterNewListTodoAfterDel);
     props.changeHolderTodoForUser(newListTodoAfterDel);
-    setIdForDelete(0);
+    resetIdDelete()
+  }
+
+  function resetIdDelete () {
+    setIdForDelete(0)
+  }
+
+  function resetIdUpdate() {
+    return setIdForStateDone(0);
   }
 
   if (IdForStateDone !== 0) {
@@ -45,7 +53,8 @@ export default function ListTask(props) {
       props.changeTaskFilterHolder(newFilterTodo) 
     }
     props.changeHolderTodoForUser(newListTodo);
-    setIdForStateDone(0) 
+    resetIdUpdate()
+    // useEffect(() => setIdForStateDone(0)) 
   } 
 
 
@@ -58,8 +67,8 @@ export default function ListTask(props) {
   }
  
     return(
-          <ul>
+          <ol>
             {listTodo.map((todo, index) => <Card getIdForDoneUpdate={getIdForDoneUpdate} getIdForDeleteEl={getIdForDeleteEl}  todo={todo} key={index}/>)} 
-          </ul>
+          </ol>
         )
 }

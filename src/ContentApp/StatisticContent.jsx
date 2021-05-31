@@ -1,14 +1,15 @@
 import React from 'react';
+import './StatisticContent.css'
 
 export default function Statistics(props) {
 
     return (
-            <p>
+            <p className="content">
               {
                 props.holderTodo.length !==0 ? 
-              `колличество задач ${props.holderTodo.length}, всего задач осталось ${props.holderTodo.filter(val => val.done === false).length},
+              `Колличество задач ${props.holderTodo.length}, всего задач осталось ${props.holderTodo.filter(val => val.done === false).length},
               выполненно ${props.holderTodo.filter(val => val.done ===  true).length}`
-              :'задач нет'
+              :'Задач нет'
               }
             </p>
         )
