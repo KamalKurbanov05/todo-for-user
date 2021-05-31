@@ -4,9 +4,9 @@ import "./css/FilterByDoneTask.css"
 export default function FilterByDone(props) {
     let listTodo = props.holderTodo.map(val => val);
 
-    
-    
     let handlerButtonDoneComplete = () => {
+        props.changeWordInput("");
+        props.changeTypeFilter("byName");
         props.changeTaskFilterHolder([]);
         
         let filterListDoneComplete = listTodo.filter(todo => todo.done === true);
@@ -14,8 +14,10 @@ export default function FilterByDone(props) {
     }
 
     let handlerButtonDoneNotComplete = () => {
+        props.changeWordInput("")
         props.changeTaskFilterHolder([]);
-         
+        props.changeTypeFilter("byName");
+        
         let filterListDoneNotComplete = listTodo.filter(todo => todo.done === false);
         console.log('look bro', filterListDoneNotComplete)
         props.changeTaskFilterHolder(filterListDoneNotComplete);

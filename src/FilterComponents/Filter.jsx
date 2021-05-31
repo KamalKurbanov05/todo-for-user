@@ -18,9 +18,29 @@ export default function Filter(props) {
 
     return (
         <div>
-            <DropingFilter changeTypeFilter={changeTypeFilter} changeWordInput={changeWordInput} holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder} />
-            <FilterByDone holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder}/>
-            <FilterByName typeFilter={typeFilter} wordInput={wordInput} changeWordInput={changeWordInput}  changeTypeFilter={changeTypeFilter} holderFilter={props.holderFilter} holderTodo={props.holderTodo} changeTaskFilterHolder={props.changeTaskFilterHolder}/>
+            <DropingFilter 
+            changeTypeFilter={changeTypeFilter} 
+            changeWordInput={changeWordInput} 
+            holderFilter={props.holderFilter} 
+            holderTodo={props.holderTodo} 
+            changeTaskFilterHolder={props.changeTaskFilterHolder} 
+            />
+            <FilterByDone 
+            holderFilter={props.holderFilter} 
+            holderTodo={props.holderTodo} 
+            changeTaskFilterHolder={props.changeTaskFilterHolder}
+            changeWordInput={changeWordInput}
+            changeTypeFilter={changeTypeFilter}
+            />
+            <FilterByName 
+            typeFilter={typeFilter} 
+            wordInput={wordInput} 
+            changeWordInput={changeWordInput}  
+            changeTypeFilter={changeTypeFilter} 
+            holderFilter={props.holderFilter} 
+            holderTodo={props.holderTodo} 
+            changeTaskFilterHolder={props.changeTaskFilterHolder}
+            />
         </div>
     )
 }

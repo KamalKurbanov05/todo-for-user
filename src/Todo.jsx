@@ -23,6 +23,7 @@ export default function Todo() {
   }
 
   let changeHolderTodoForUser = (listAfterChangeHolderTodo) => {
+    console.log('мы сейчас в Todo');
     setHolderTodo(listAfterChangeHolderTodo);
   }
 

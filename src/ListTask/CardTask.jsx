@@ -4,18 +4,46 @@ import "./CardTask.css"
 export default function Card(props) {
 
     let todo = Object.assign({} ,props.todo);
-    
+    let listAfterChange = props.holderTodo.map(todo => todo);
+    let listFilterAfterChange = props.holderFilter.map(todo => todo);
+
     let handlerDelete = () => {
         
       let response = window.confirm(`Вы действительно хотите удалить ${todo.heading !== '' ? todo.heading : todo.task} ?`)
-
-        if (response) {
-          props.getIdForDeleteEl(todo.id)
+        
+      if (response) {
+          
+          props.changeTaskFilterHolder(listAfterChange.filter(val => val.id !== todo.id));
+          props.changeHolderTodoForUser(listFilterAfterChange.filter(val => val.id !== todo.id));
         }
     }
 
     let handlerChangeDone = () => {
-        props.getIdForDoneUpdate(todo.id)
+      props.changeTaskFilterHolder(listFilterAfterChange.map(valTodo => {
+        let copyTodo = Object.assign({}, valTodo);
+        if (copyTodo.id === todo.id){
+          copyTodo.done? copyTodo.done = false: copyTodo.done = true;
+          return copyTodo;
+        } else {
+          
+          return copyTodo;
+        }
+      }
+      )
+      )
+
+      props.changeHolderTodoForUser(listAfterChange.map(valTodo => {
+        let copyTodo = Object.assign({}, valTodo);
+        if (copyTodo.id === todo.id){
+          copyTodo.done? copyTodo.done = false: copyTodo.done = true;
+          return copyTodo;
+        } else {
+          
+          return copyTodo;
+        }
+      }
+      )
+      )
     }
 
     return(
