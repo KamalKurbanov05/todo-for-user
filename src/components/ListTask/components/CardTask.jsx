@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardTask.css"
+import "./cardTask.css"
 
 export default function Card(props) {
 

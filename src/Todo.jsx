@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import MainInputs from "./InputsApp/MainInputsApp";
-import Statistics from "./ContentApp/StatisticContent";
-import DeleteHighlight from "./BtnDeleteHighlight/DeleteAndHighlightAll";
-import ListTask from "./ListTask/listTask";
-import Filter from "./FilterComponents/Filter";
-import "./Todo.css"
-
-
+import MainInputs from "./components/MainInputsApp/MainInputsApp";
+import Statistics from "./components/StatisticContent/StatisticContent";
+import DeleteHighlight from "./components/DeleteAndHighlightAll/DeleteAndHighlightAll";
+import ListTask from "./components/ListTask/ListTask";
+import Filter from "./components/FilterComponents/Filter";
+import "./todo.css"
 
 export default function Todo() {
   const [holderTodo, setHolderTodo] = useState([]);
@@ -23,7 +21,6 @@ export default function Todo() {
   }
 
   let changeHolderTodoForUser = (listAfterChangeHolderTodo) => {
-    console.log('мы сейчас в Todo');
     setHolderTodo(listAfterChangeHolderTodo);
   }
 

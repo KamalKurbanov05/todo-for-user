@@ -1,8 +1,7 @@
 import React from "react";
-import "./DeleteAndHighlightAll.css"
+import "./deleteAndHighlightAll.css"
 
 export default function DeleteHighlight (props) {
-  console.log('we here bro', props.holderTodo)
 
     let handlerSetAll = () => {
         let listDoneAll;

@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./CardTask";
+import Card from "./components/CardTask";
 
 
 export default function ListTask(props) { 

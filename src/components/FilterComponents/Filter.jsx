@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import DropingFilter from "./DropingFilter";
-import FilterByDone from "./FIlterByDoneTask";
-import FilterByName from "./FilterByName";
+import DropingFilter from "./components/DropingFilter";
+import FilterByDone from "./components/FIlterByDoneTask";
+import FilterByName from "./components/FilterByName";
 
 
 export default function Filter(props) {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import "./MainInputsApp.css"
+import "./mainInputsApp.css"
 
  export default  function MainInputs(props){
   const [heading, setHeading] = useState("")
@@ -8,13 +8,11 @@ import "./MainInputsApp.css"
   let dataHeading = (el) => {
     let heading = el.target.value;
     setHeading(heading);
-    console.log("heading" , heading)
   }
 
   let dataTask = (el) => {
     let task = el.target.value;
     setTask(task);
-    console.log("task", task)
   }
 
   let createTask = () => {

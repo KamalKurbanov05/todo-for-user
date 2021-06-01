@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./css/FilterByName.css"
+import "./css/filterByName.css"
 
 export default function FilterByName (props) {
     const [notFoundMsgByName, setNotFoundMsgByName] = useState({__html:" "});
@@ -78,8 +78,7 @@ export default function FilterByName (props) {
 
             let filterList = lisTodo.filter(todo => todo.task.includes(props.wordInput));
             props.changeTaskFilterHolder(filterList);
-            console.log('byText')
-            
+
             if (filterList.length === 0) {
                 setNotFoundMsgByText({__html: notFoundMsg});
                 setNotFoundMsgByName({__html: " "});

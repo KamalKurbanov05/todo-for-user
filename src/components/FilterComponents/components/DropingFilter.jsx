@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/DropingFilter.css"
+import "./css/dropingFilter.css"
 
 export default function DropingFilter(props){
     let styleForBtn;
